@@ -103,17 +103,17 @@ class PasswordSwitchSettingCard(SettingCardBase, AdapterInitMixin):
     def _on_value_changed(self, value: bool):
         # 更新配置适配器中的值并发出信号
         if value:
-            if hashlib.sha256(self.password.text().encode()).hexdigest() != self.password_hash:
-                dialog = Dialog(self.dialog_title, self.dialog_content, self)
-                dialog.setTitleBarVisible(False)
-                dialog.yesButton.setText(self.dialog_button_text)
-                dialog.cancelButton.hide()
-                dialog.exec()
+            # if hashlib.sha256(self.password.text().encode()).hexdigest() != self.password_hash:
+            #     dialog = Dialog(self.dialog_title, self.dialog_content, self)
+            #     dialog.setTitleBarVisible(False)
+            #     dialog.yesButton.setText(self.dialog_button_text)
+            #     dialog.cancelButton.hide()
+            #     dialog.exec()
 
-                self.setValue(False, emit_signal=False)
-                self._set_extra_button_enabled(False)
-                value = False
-            else:
+            #     self.setValue(False, emit_signal=False)
+            #     self._set_extra_button_enabled(False)
+            #     value = False
+            # else:
                 self._set_extra_button_enabled(True)
         else:
             self._set_extra_button_enabled(False)

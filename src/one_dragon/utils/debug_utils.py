@@ -5,8 +5,8 @@ from functools import lru_cache
 from typing import Optional
 
 import cv2
-import win32clipboard
-import win32con
+# import win32clipboard
+# import win32con
 from cv2.typing import MatLike
 from PIL import Image
 
